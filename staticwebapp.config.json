@@ -1,0 +1,21 @@
+{
+    "trailingSlash": "never",
+    "routes": [
+        {
+            "route": "/admin",
+            "allowedRoles": ["authenticated"]
+        }
+    ],
+    "responseOverrides": {
+        "401": {
+            "rewrite": "/unauth.html",
+            "statusCode": 200
+        },
+        "404": {
+            "redirect": "/notfound.html"
+        }
+    },
+    "navigationFallback": {
+        "rewrite": "/notfound.html"
+    }
+}
